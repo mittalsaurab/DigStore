@@ -9,7 +9,8 @@ var thingSchema = new mongoose.Schema({
       ref: "User"
     },
     name: String
-  }
+  },
+  textInfo:  String
 })
 
 module.exports = mongoose.model("Thing",thingSchema);

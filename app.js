@@ -30,7 +30,8 @@ var Thing = require("./models/Thing")
 var User = require("./models/User")
 
 var authRoutes = require("./routes/index");
-
+var localRoutes = require("./routes/local");
+var globalRoutes = require("./routes/global")
 
 app.use(passport.initialize())
 app.use(passport.session())
@@ -40,12 +41,14 @@ passport.serializeUser(User.serializeUser())
 passport.deserializeUser(User.deserializeUser())
 
 app.use(function(req,res,next){
-  res.locals.currentUser = req.user
+  res.locals.currentUser = req.user;
   next()
 })
 
 //Insert routes here
 
+app.use('/local',localRoutes)
+app.use('/global',globalRoutes)
 app.use(authRoutes);
 
 

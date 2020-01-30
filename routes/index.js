@@ -3,9 +3,7 @@ var passport=require("passport");
 var User=require("../models/User");
 var router=express.Router({mergeParams:true});
 var Thing = require('../models/Thing');
-//AUTHORISATION PART
 
-// REGISTRATION FORM	
 
 router.get('/',function(req,res){
 	res.render('home')
@@ -29,10 +27,6 @@ router.post('/register',function(req,res){
 	var newUser=new User(merged);
 	
 	// eval(require('locus'));
-
-	// if(req.body.adminCode==="1234"){
-	// 	newUser.isAdmin=true;
-	// }
 
 	User.register(newUser,req.body.password,function(err,user){
 		
@@ -65,14 +59,14 @@ router.post('/login',passport.authenticate("local",{
 
 router.get('/logout',function(req,res){
 	req.logout();
-	req.flash("success","Successfully Logged Out ..");
-	res.redirect('/campgrounds');
+	// req.flash("success","Successfully Logged Out ..");
+	res.redirect('/');
 })
 
 
 // Profile part
 
-router.get('/user/:id',function(req,res){
+router.get('/local/:id',function(req,res){
 
 	User.findById(req.params.id,function(err,foundUser){
 		if(err){
@@ -91,7 +85,6 @@ router.get('/user/:id',function(req,res){
 	
 	})
 })
-
 
 
 module.exports=router;
