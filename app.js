@@ -23,8 +23,11 @@ mongoose
 app.use(require("express-session")({
   secret:"Bonsoir Elliot",
   resave: false,
-  saveUninitialised: false
+  saveUninitialized: false
 }))
+
+var Thing = require("./models/Thing")
+var User = require("./models/User")
 
 app.use(passport.initialize())
 app.use(passport.session())
