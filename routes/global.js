@@ -12,4 +12,5 @@ router.get('/search',(req,res)=>{
 // it will return images with detail 
 
 // that we will show to /global/things/id
-export 
+
+module.exports = router; 

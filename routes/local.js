@@ -6,13 +6,22 @@ var middleware = require('../middleware/index')
 
 
 router.get('/search',(req,res)=>{
-	res.render('local/search.ejs');
+	res.render('local/search');
 })
 
 // POST API request to Python model for containing (image,userid) 
 // it will return image_id with detail 
 // that we will show to /local/things/id
 
+router.get('/things',(req,res)=>{
+	res.send('local/show');
+})
+
+router.get('/things/new',(req,res)=>{
+		
+	res.render("local/new");
+
+})
 
 router.get('/things/:thing_id',(req,res)=>{
 
@@ -31,19 +40,12 @@ router.get('/things/:thing_id',(req,res)=>{
 })
 
 
-
-router.get('/things/new',(req,res)=>{
-		
-		res.render("local/new");
-
-})
-
 router.post('/things',(req,res)=>{
 	//Extract image from the req and add it to Thing model
 
 	// redirect through ajax to /things
 
-})
+})	
 
 router.put('/things/:thing_id',(req,res)=>{
 	//update the mongodb for this
@@ -74,3 +76,4 @@ router.get('/things/:thing_id/edit',(req,res)=>{
 
 })
 
+module.exports = router; 

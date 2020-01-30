@@ -9,6 +9,7 @@ router.get('/',function(req,res){
 	res.render('home')
 })
 
+
 router.get('/register',function(req,res){
 	res.render("register");
 })
@@ -79,7 +80,7 @@ router.get('/local/:id',function(req,res){
 				console.log("Error during fetching images for this user" + err);
 			}
 
-			res.render("users/show",{user:foundUser,thing:things});
+			res.render("user/show",{user:foundUser,thing:things});
 
 		})
 	
