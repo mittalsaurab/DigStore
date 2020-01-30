@@ -1,0 +1,33 @@
+{
+  "name": "digstore",
+  "version": "1.0.0",
+  "description": "Virtual guide",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "./node_modules/nodemon/bin/nodemon.js app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HemantVashist/DigStore.git"
+  },
+  "author": "Saurabh Mittal, Hemant Vashist, Mohammad Saif, Mitul Hirna",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/HemantVashist/DigStore/issues"
+  },
+  "homepage": "https://github.com/HemantVashist/DigStore#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "ejs": "^3.0.1",
+    "express": "^4.17.1",
+    "express-session": "^1.17.0",
+    "mongoose": "^5.8.10",
+    "nodemon": "^2.0.2",
+    "passport": "^0.4.1",
+    "passport-local": "^1.0.0",
+    "passport-local-mongoose": "^6.0.1",
+    "request": "^2.88.0"
+  }
+}
