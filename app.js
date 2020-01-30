@@ -6,12 +6,6 @@ var localStrategy = require("passport-local")
 var cors = require("cors")
 var request = require("request")
 
-var Thing = require('./models/Thing.js')
-var User = require('./models/User.js')
-
-var authRoutes = require("./routes/index");
-
-
 var app = express()
 app.set("view engine","ejs")
 app.use(express.static("public"))
@@ -35,6 +29,9 @@ app.use(require("express-session")({
 var Thing = require("./models/Thing")
 var User = require("./models/User")
 
+var authRoutes = require("./routes/index");
+
+
 app.use(passport.initialize())
 app.use(passport.session())
 
@@ -50,7 +47,6 @@ app.use(function(req,res,next){
 //Insert routes here
 
 app.use(authRoutes);
-
 
 
 
