@@ -10,7 +10,6 @@ var fs = require("fs")
 var path = require("path");
 var app = express()
 app.set("view engine","ejs")
-app.use(express.static("public"))
 app.use(bodyParser.urlencoded({extended:true}))
 app.use(express.static(__dirname+"/public"))
 app.use(cors())
