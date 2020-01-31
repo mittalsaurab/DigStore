@@ -1,8 +1,6 @@
 var express = require("express")
 var bodyParser = require("body-parser")
 var mongoose = require("mongoose")
-var passport = require("passport")
-var localStrategy = require("passport-local")
 var cors = require("cors")
 var request = require("request")
 var multer = require("multer")
@@ -21,32 +19,12 @@ mongoose
   .then(()=>{console.log("MongoDB connected.")})
   .catch((err)=>{console.log(err)})
 
-app.use(require("express-session")({
-  secret:"Bonsoir Elliot",
-  resave: false,
-  saveUninitialized: false
-}))
-
 var Thing = require("./models/Thing")
 var User = require("./models/User")
 
 var authRoutes = require("./routes/index");
 var localRoutes = require("./routes/local");
 var globalRoutes = require("./routes/global")
-
-app.use(passport.initialize())
-app.use(passport.session())
-
-passport.use(new localStrategy(User.authenticate()))
-passport.serializeUser(User.serializeUser())
-passport.deserializeUser(User.deserializeUser())
-
-app.use(function(req,res,next){
-  res.locals.currentUser = req.user;
-  next()
-})
-
-//Insert routes here
 
 const handleError = (err, res) => {
   res
@@ -84,11 +62,9 @@ app.post("/local/upload", upload.single("file"), (req, res) => {
   }
 );
 
-
 app.use('/local',localRoutes)
 app.use('/global',globalRoutes)
 app.use(authRoutes);
-
 
 port = process.env.PORT || 8080
 app.listen(port,()=>{
