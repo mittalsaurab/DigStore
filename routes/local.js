@@ -76,4 +76,8 @@ router.get('/things/:thing_id/edit',(req,res)=>{
 
 })
 
+async function loadThingsCollection(){
+	
+}
+
 module.exports = router; 

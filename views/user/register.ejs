@@ -1,46 +1,6 @@
-<%include partials/header%>
+<% include("../partials/header") %>
 
-<div class="container">
-	<h1 style="text-align:center; margin-top:10px">Register</h1>
-	<div class="row">
-		<div style="width:30% ;margin:10px auto;">
-			<form  action="/register" method="POST" class="form-signin">
-					<div class="form-label-group ">
-						<input type="text" name="username" class="form-control" placeholder="username" autocomplete="off">
-						<label>User_Name </label>
-					</div>	
-					<div class="form-label-group">
-						<input type="password" name="password" class="form-control" placeholder="password">
-						<label>Password:</label>
-					</div>	
-					<div class="form-label-group">
-						<input type="text" name="newUser[firstName]" class="form-control" placeholder="first name">
-						<label>First Name</label>
-					</div>
-					<div class="form-label-group">
-						<input type="text" name="newUser[lastName]" class="form-control" placeholder="last name">
-						<label>Last Name</label>
-					</div>
-					<div class="form-label-group">
-						<input type="email" name="newUser[email]" class="form-control" placeholder="email">
-						<label>Email</label>
-					</div>
-					<div class="form-label-group">
-						<input type="text" name="newUser[avatar]" class="form-control" placeholder="image url">
-						<label>Image url</label>
-					</div>
-					<div class="form-label-group">
-						<input type="password" name="adminCode" class="form-control" placeholder="adminCode">
-						<label>Admin code</label>
-					</div>					  
-				  <button class="btn btn-lg btn-primary btn-block" type="/register">Sign in</button>
-			</form>
-			<p style="text-align:center">Already signedUp? <a href="/login">Login </a></p>
-		</div>
-	</div>	
-</div>
+<h1>GET route for register</h1>
 
-
-
-<% include partials/footer %>
+<% include("../partials/footer") %>
 
