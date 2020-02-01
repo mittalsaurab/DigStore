@@ -1,0 +1,13 @@
+	<h1>This is user specific</h1>
+
+	<% var path = 'home/saurabh/Documents/Hackathon/DigStore/uploads/files'%>
+
+	<% foundThings.forEach((ele)=>{ %>
+		<% var image_id = ele._id; %>
+		<% var image_path = path + image; %>
+
+		<img src = `"${image_path}"`> 
+
+	<% }) %>
+
+	

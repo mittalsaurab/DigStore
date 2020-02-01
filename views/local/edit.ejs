@@ -1,7 +1,10 @@
 <%- include("../partials/header") %>
 
-<h1>Edit <%= this %> thing</h1>
+<h1>Edit Thing</h1>
 
-<form action="/"></form>
+<form action="/things/<%= thing._id %>/?_method=PUT" method="PUT" enctype="multipart/form-data">
+	<input type="file" accept="image/*" name="file">
+	<textarea name="info" value=" <%= thing.textInfo %>"></textarea>
+</form>
 
 <%- include("../partials/footer") %>

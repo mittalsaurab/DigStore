@@ -1,0 +1,19 @@
+<h1>Detail of particular image</h1>
+
+<div id = "image" >
+	
+</div>
+
+<p><%=info%></p>
+
+
+<script type="text/javascript">
+	var path = 'home/saurabh/Documents/Hackathon/DigStore/uploads/files';
+
+	var image_id = image_id; 
+
+	var image_path = path + image_id;
+
+	document.getElementById("image").innerHTML = `<img src = "${image_path}" >` 
+
+</script>

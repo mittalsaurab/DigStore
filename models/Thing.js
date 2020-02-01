@@ -1,7 +1,7 @@
 var mongoose = require("mongoose")
 
 var thingSchema = new mongoose.Schema({
-  image:String,
+  image_id:String,
   location: String,
   author: {
     id: {
